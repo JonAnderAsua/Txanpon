@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="554.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="azterketa.ui.MainKud">
+   <children>
+      <TableView fx:id="tableId" layoutX="41.0" layoutY="67.0" prefHeight="410.0" prefWidth="627.0">
+        <columns>
+          <TableColumn fx:id="idID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="izenaId" prefWidth="75.0" text="Txanpon" />
+            <TableColumn fx:id="dataId" prefWidth="104.0" text="Noiz" />
+            <TableColumn fx:id="zenbatId" prefWidth="104.0" text="Zenbat" />
+            <TableColumn fx:id="bolumenId" prefWidth="75.0" text="Bolumena" />
+            <TableColumn fx:id="portaeraId" prefWidth="75.0" text="Portaera" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Button fx:id="sartuId" layoutX="153.0" layoutY="14.0" mnemonicParsing="false" onAction="#sartuClick" text="Sartu" />
+      <Button fx:id="gordeId" layoutX="253.0" layoutY="14.0" mnemonicParsing="false" onAction="#gordeClick" text="Gorde" />
+      <ComboBox fx:id="comboId" layoutX="375.0" layoutY="14.0" prefWidth="150.0" />
+      <Label fx:id="labeiId" layoutX="190.0" layoutY="502.0" prefHeight="16.0" prefWidth="405.0" />
+   </children>
+</AnchorPane>
