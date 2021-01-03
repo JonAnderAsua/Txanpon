@@ -1,6 +1,7 @@
 package azterketa.ui;
 
 import azterketa.App;
+import azterketa.db.TxanponKud;
 import azterketa.utils.Txanpona;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -11,9 +12,13 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class MainKud {
 
@@ -51,6 +56,8 @@ public class MainKud {
     private Label labeiId;
 
     private App app;
+    private TxanponKud tx = TxanponKud.getInstance();
+    private List<Txanpona> txanponak = new ArrayList<>();
 
     @FXML
     void gordeClick(ActionEvent event) {
@@ -67,10 +74,20 @@ public class MainKud {
     }
 
     @FXML
-    void initialize() {
+    void initialize() throws SQLException {
         ObservableList<String> txanponMotak = FXCollections.observableArrayList();;
         txanponMotak.addAll("BTC","ETH");
         comboId.setItems(txanponMotak);
+
+        txanponak = tx.getTxanponak();
+
+        idID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        izenaId.setCellValueFactory(new PropertyValueFactory<>("izena"));
+        dataId.setCellValueFactory(new PropertyValueFactory<>("data"));
+        zenbatId.setCellValueFactory(new PropertyValueFactory<>("balioa"));
+        bolumenId.setCellValueFactory(new PropertyValueFactory<>("bolumena"));
+        portaeraId.setCellValueFactory(new PropertyValueFactory<>("joera"));
+
 
     }
 }

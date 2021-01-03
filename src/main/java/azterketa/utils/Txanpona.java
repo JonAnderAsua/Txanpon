@@ -10,7 +10,9 @@ public class Txanpona {
     private Date data;
     private Float balioa;
     private Float bolumena;
-    private Image irudia;
+    private String joera;
+
+    public Txanpona() { }
 
     public int getId() {
         return id;
@@ -52,11 +54,11 @@ public class Txanpona {
         this.bolumena = bolumena;
     }
 
-    public Image getIrudia() {
-        return irudia;
+    public String getJoera() {
+        return joera;
     }
 
-    public void setIrudia(Image irudia) {
-        this.irudia = irudia;
+    public void setJoera(String joera) {
+        this.joera = joera;
     }
 }
